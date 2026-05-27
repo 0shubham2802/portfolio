@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function WritingPage() {
   return (
     <section className="enter-fade-up flex min-h-[50vh] flex-col justify-center gap-5 pt-8">
-      <MonoLabel>{"> WRITING / index_of_0"}</MonoLabel>
+      <MonoLabel>{"> WRITING"}</MonoLabel>
 
       <h1 className="font-medium leading-[0.95] tracking-[-1px] text-[clamp(32px,5vw,48px)] text-ink">
         Writing<span className="text-accent">.</span>

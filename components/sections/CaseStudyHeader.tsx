@@ -4,16 +4,12 @@ import { Pill } from "@/components/ui/Pill";
 import type { ProjectBadge } from "@/content/projects";
 
 interface CaseStudyHeaderProps {
-  order: string;
-  total: string;
   title: string;
   pathLabel: string;
   badges?: ProjectBadge[];
 }
 
 export function CaseStudyHeader({
-  order,
-  total,
   title,
   pathLabel,
   badges = [],
@@ -27,7 +23,7 @@ export function CaseStudyHeader({
         ← BACK_TO_WORK
       </Link>
 
-      <MonoLabel>{`> SELECTED_WORK / ${order}_of_${total}`}</MonoLabel>
+      <MonoLabel>{"> SELECTED_WORK"}</MonoLabel>
 
       <h1 className="font-medium leading-[0.95] tracking-[-1px] text-[clamp(32px,5vw,48px)] text-ink">
         {title}

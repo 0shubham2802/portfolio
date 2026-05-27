@@ -14,7 +14,7 @@ export default function WorkPage() {
   return (
     <section className="enter-fade-up pt-8">
       <div className="flex flex-col gap-5">
-        <MonoLabel>{"> SELECTED_WORK / index_of_04"}</MonoLabel>
+        <MonoLabel>{"> SELECTED_WORK"}</MonoLabel>
 
         <h1 className="font-medium leading-[0.95] tracking-[-1px] text-[clamp(32px,5vw,48px)] text-ink">
           Selected work<span className="text-accent">.</span>

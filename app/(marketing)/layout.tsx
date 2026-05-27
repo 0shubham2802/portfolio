@@ -7,9 +7,12 @@ export default function MarketingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div id="top" className="mx-auto w-full max-w-screen-2xl px-8 lg:px-12">
+    <div
+      id="top"
+      className="mx-auto flex min-h-dvh w-full max-w-screen-2xl flex-col px-8 lg:px-12"
+    >
       <SiteNav />
-      <main>{children}</main>
+      <main className="flex-1">{children}</main>
       <SiteFooter />
     </div>
   );

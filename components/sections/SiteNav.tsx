@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { NavLink } from "@/components/ui/NavLink";
 import { bio } from "@/content/bio";
 
@@ -9,11 +10,16 @@ const links = [
   { label: "WORK", href: "/work" },
   { label: "STACK", href: "/about" },
   { label: "WRITING", href: "/writing" },
-  { label: "CONTACT", href: "/contact", accent: true },
+  { label: "CONTACT", href: "/contact" },
 ];
+
+function isActive(pathname: string, href: string): boolean {
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 export function SiteNav() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <nav className="py-6">
@@ -28,7 +34,11 @@ export function SiteNav() {
 
         <div className="hidden items-center gap-[22px] md:flex">
           {links.map((link) => (
-            <NavLink key={link.href} href={link.href} accent={link.accent}>
+            <NavLink
+              key={link.href}
+              href={link.href}
+              active={isActive(pathname, link.href)}
+            >
               {link.label}
             </NavLink>
           ))}
@@ -54,7 +64,7 @@ export function SiteNav() {
             <NavLink
               key={link.href}
               href={link.href}
-              accent={link.accent}
+              active={isActive(pathname, link.href)}
               onClick={() => setOpen(false)}
             >
               {link.label}

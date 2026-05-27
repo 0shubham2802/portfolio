@@ -34,8 +34,6 @@ export default function HelloGeoPage() {
   return (
     <article className="enter-fade-up pt-8 space-y-16">
       <CaseStudyHeader
-        order="02"
-        total="04"
         title="Hello Geo"
         pathLabel="ar_navigation/"
         badges={[{ label: "ANDROID", variant: "solid" }]}

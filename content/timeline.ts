@@ -1,8 +1,8 @@
 export interface TimelineEntry {
   when: string;
   title: string;
-  org: string;
-  detail?: string;
+  org?: string;
+  points?: string[];
   current?: boolean;
 }
 
@@ -11,24 +11,29 @@ export const timeline: TimelineEntry[] = [
     when: "Jul – Sep 2025",
     title: "Software Developer Intern",
     org: "WorkAssist",
-    detail:
-      "Laravel/PHP backend modules + REST endpoints across 2 production projects.",
+    points: [
+      "Built Laravel/PHP backend modules and REST endpoints across two production projects.",
+      "Tuned query performance and hardened third-party API integrations for reliability.",
+    ],
     current: true,
   },
   {
     when: "Aug 2024 – Jan 2025",
     title: "Tech & SWE Intern",
     org: "ItsHemp",
-    detail: "React frontend on a WordPress CMS; cut page load ~300ms.",
+    points: [
+      "Built the React frontend on top of a WordPress CMS.",
+      "Restructured component rendering for a ~300ms page-load improvement.",
+    ],
   },
   {
     when: "2023 – 2025",
-    title: "MCA · 8.20 CGPA",
-    org: "Manipal University Jaipur",
+    title: "Manipal University Jaipur",
+    points: ["MCA — Master of Computer Applications", "CGPA 8.20"],
   },
   {
     when: "2020 – 2023",
-    title: "BCA",
-    org: "Chandigarh University, Mohali",
+    title: "Chandigarh University, Mohali",
+    points: ["BCA — Bachelor of Computer Applications"],
   },
 ];

@@ -44,8 +44,6 @@ export default function ChronosPage() {
   return (
     <article className="enter-fade-up pt-8 space-y-16">
       <CaseStudyHeader
-        order="01"
-        total="04"
         title="Chronos"
         pathLabel="distributed_job_scheduler/"
         badges={[
