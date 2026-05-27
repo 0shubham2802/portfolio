@@ -218,25 +218,11 @@ interface OrbitalSceneProps {
 }
 
 export function OrbitalScene({ className }: OrbitalSceneProps) {
-  const [isMobile, setIsMobile] = useState(false);
   const [frameloop, setFrameloop] = useState<"always" | "never">("always");
 
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 767px)");
-    const update = () => setIsMobile(mq.matches);
-    update();
-    mq.addEventListener("change", update);
-    return () => mq.removeEventListener("change", update);
-  }, []);
-
-  useEffect(() => {
-    if (isMobile) {
-      // mobile: render a brief intro, then freeze to save battery
-      const timeout = window.setTimeout(() => setFrameloop("never"), 1200);
-      return () => window.clearTimeout(timeout);
-    }
-
-    // desktop: pause after 60s of no cursor movement, resume on the next move
+    // Animate continuously on every device (desktop + mobile); pause after 60s
+    // of no pointer movement (mouse OR touch) to save battery, resume on move.
     let timer = window.setTimeout(() => setFrameloop("never"), IDLE_MS);
     const onMove = () => {
       setFrameloop((prev) => (prev === "never" ? "always" : prev));
@@ -248,9 +234,7 @@ export function OrbitalScene({ className }: OrbitalSceneProps) {
       window.removeEventListener("pointermove", onMove);
       window.clearTimeout(timer);
     };
-  }, [isMobile]);
-
-  const workerCount = isMobile ? 4 : 6;
+  }, []);
 
   return (
     <div className={cn("relative", className)}>
@@ -260,7 +244,7 @@ export function OrbitalScene({ className }: OrbitalSceneProps) {
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
         camera={{ position: [0, 0, 5.6], fov: 38 }}
       >
-        <Scene workerCount={workerCount} interactive={!isMobile} />
+        <Scene workerCount={6} interactive />
       </Canvas>
 
       {CORNERS.map((corner) => (
