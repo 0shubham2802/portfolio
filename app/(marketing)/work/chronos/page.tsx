@@ -122,6 +122,20 @@ export default function ChronosPage() {
         </div>
       </section>
 
+      <section className="space-y-4 border border-line-subtle bg-surface p-6">
+        <MonoLabel as="p">{"// TRY_IT_YOURSELF"}</MonoLabel>
+        <p className="max-w-2xl text-[14px] leading-[1.65] text-ink-secondary">
+          A 60-second playable version of Chronos lives in the arcade. Dispatch
+          jobs to idle workers and watch the DLQ fill if you&apos;re too slow.
+        </p>
+        <div className="flex flex-col items-start gap-3 sm:flex-row">
+          <Button href="/play/schedule-hack">PLAY_SCHEDULE_HACK →</Button>
+          <Button variant="secondary" href="/play/race">
+            PLAY_RACE_CONDITION →
+          </Button>
+        </div>
+      </section>
+
       <div className="flex flex-col items-start gap-3 sm:flex-row">
         <Button href={github} external>
           GITHUB ↗
