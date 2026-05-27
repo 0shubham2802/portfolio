@@ -17,6 +17,7 @@
   --color-text-tertiary: #7A7E8B;
   --color-text-deep: #5A5F70;
   --color-signal-positive: #6DDB9C; /* mint — "available" status indicator ONLY */
+  --color-signal-negative: #E58A6A; /* warm peach — errors / expiration / collisions ONLY */
 }
 
 @layer base {

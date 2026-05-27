@@ -31,6 +31,7 @@ const config: Config = {
           deep: "var(--color-text-deep)",
         },
         positive: "var(--color-signal-positive)",
+        negative: "var(--color-signal-negative)",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
