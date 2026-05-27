@@ -36,8 +36,8 @@ export function Hero() {
               <Button href="/work" variant="primary">
                 VIEW_WORK →
               </Button>
-              <Button href="/resume.pdf" variant="secondary" external>
-                RESUME.PDF
+              <Button href={bio.resumeUrl} variant="secondary" external>
+                RESUME ↗
               </Button>
             </div>
           </MouseParallaxLayer>

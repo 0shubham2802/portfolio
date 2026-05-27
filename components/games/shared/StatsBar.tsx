@@ -19,13 +19,13 @@ export function Stat({
   tone?: StatTone;
 }) {
   return (
-    <div className="flex-1 px-3 py-2.5 md:px-4">
-      <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-muted">
+    <div className="min-w-0 flex-1 px-2.5 py-2.5 md:px-4">
+      <div className="truncate font-mono text-[10px] uppercase tracking-[0.06em] text-ink-muted">
         {label}
       </div>
       <div
         className={cn(
-          "mt-0.5 font-mono text-[18px] tabular-nums md:text-[20px]",
+          "mt-0.5 truncate font-mono text-[17px] tabular-nums md:text-[20px]",
           toneClass[tone],
         )}
       >

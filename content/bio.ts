@@ -5,6 +5,8 @@ export const bio = {
   kicker: "> BACKEND_ENGINEER.JAVA",
   location: "Bengaluru, IN",
   status: "AVAILABLE FOR BACKEND ROLES",
+  resumeUrl:
+    "https://drive.google.com/file/d/1FhHuddYcUgSS-fnSww30LxRiMOTHNLmW/view?usp=sharing",
   tagline:
     "I design distributed systems in Java & Spring Boot. Currently shipping Chronos — a job scheduler with cron, retries, and email notifications.",
   contact: {

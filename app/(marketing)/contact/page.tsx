@@ -25,6 +25,12 @@ const channels: Channel[] = [
     external: false,
   },
   {
+    label: "RESUME",
+    href: bio.resumeUrl,
+    handle: "view PDF",
+    external: true,
+  },
+  {
     label: "LINKEDIN",
     href: bio.contact.linkedin,
     handle: "in/pantshubham",

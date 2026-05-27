@@ -92,7 +92,7 @@ export function GameShell({
         ) : null}
 
         <div className="flex items-center justify-between gap-3 border-t border-line-subtle px-4 py-3 md:px-6">
-          <span className="truncate font-mono text-[11px] text-ink-tertiary">
+          <span className="min-w-0 truncate font-mono text-[11px] text-ink-tertiary">
             {inputHint}
           </span>
           {highScore ? (
