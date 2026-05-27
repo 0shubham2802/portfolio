@@ -241,7 +241,7 @@ export function OrbitalScene({ className }: OrbitalSceneProps) {
       <Canvas
         frameloop={frameloop}
         dpr={[1, 2]}
-        gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+        gl={{ antialias: true, alpha: true }}
         camera={{ position: [0, 0, 5.6], fov: 38 }}
       >
         <Scene workerCount={6} interactive />

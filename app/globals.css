@@ -61,6 +61,22 @@
   }
 }
 
+/* Animated static-SVG fallback (mobile / WebGL-unavailable): a rolling
+   "dispatch" pulse across the connection lines so the diagram stays alive. */
+.fb-line {
+  animation: fb-dispatch 4s ease-in-out infinite;
+}
+
+@keyframes fb-dispatch {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

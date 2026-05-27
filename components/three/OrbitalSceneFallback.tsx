@@ -21,11 +21,43 @@ export function OrbitalSceneFallback({ className }: OrbitalSceneFallbackProps) {
         <ellipse cx="130" cy="125" rx="82" ry="24" />
         <ellipse cx="130" cy="125" rx="50" ry="14" />
       </g>
-      <g stroke="#3D7BFF" strokeWidth="0.6" fill="none" opacity="0.5">
-        <line x1="130" y1="118" x2="26" y2="123" />
-        <line x1="130" y1="118" x2="234" y2="123" />
-        <line x1="130" y1="118" x2="66" y2="156" />
-        <line x1="130" y1="118" x2="194" y2="156" />
+      <g stroke="#3D7BFF" strokeWidth="0.6" fill="none">
+        <line
+          className="fb-line"
+          x1="130"
+          y1="118"
+          x2="26"
+          y2="123"
+          opacity="0.4"
+          style={{ animationDelay: "0s" }}
+        />
+        <line
+          className="fb-line"
+          x1="130"
+          y1="118"
+          x2="234"
+          y2="123"
+          opacity="0.4"
+          style={{ animationDelay: "1s" }}
+        />
+        <line
+          className="fb-line"
+          x1="130"
+          y1="118"
+          x2="66"
+          y2="156"
+          opacity="0.4"
+          style={{ animationDelay: "2s" }}
+        />
+        <line
+          className="fb-line"
+          x1="130"
+          y1="118"
+          x2="194"
+          y2="156"
+          opacity="0.4"
+          style={{ animationDelay: "3s" }}
+        />
       </g>
       <rect
         x="18"
