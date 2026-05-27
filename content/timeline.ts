@@ -1,39 +1,38 @@
-export interface TimelineEntry {
+export type TimelineItem = {
   when: string;
-  title: string;
-  org?: string;
-  points?: string[];
+  org: string;
   current?: boolean;
-}
+  bullets: string[];
+};
 
-export const timeline: TimelineEntry[] = [
+export const timeline: TimelineItem[] = [
   {
     when: "Jul – Sep 2025",
-    title: "Software Developer Intern",
     org: "WorkAssist",
-    points: [
-      "Built Laravel/PHP backend modules and REST endpoints across two production projects.",
-      "Tuned query performance and hardened third-party API integrations for reliability.",
-    ],
     current: true,
+    bullets: [
+      "Software Developer Intern",
+      "Laravel/PHP backend modules + REST endpoints",
+      "Shipped across 2 production projects",
+    ],
   },
   {
     when: "Aug 2024 – Jan 2025",
-    title: "Tech & SWE Intern",
     org: "ItsHemp",
-    points: [
-      "Built the React frontend on top of a WordPress CMS.",
-      "Restructured component rendering for a ~300ms page-load improvement.",
+    bullets: [
+      "Tech & SWE Intern",
+      "React frontend integrated with a WordPress CMS",
+      "Restructured component rendering for ~300ms TTI improvement",
     ],
   },
   {
     when: "2023 – 2025",
-    title: "Manipal University Jaipur",
-    points: ["MCA — Master of Computer Applications", "CGPA 8.20"],
+    org: "Manipal University Jaipur",
+    bullets: ["Master of Computer Applications (MCA)", "CGPA 8.20"],
   },
   {
     when: "2020 – 2023",
-    title: "Chandigarh University, Mohali",
-    points: ["BCA — Bachelor of Computer Applications"],
+    org: "Chandigarh University, Mohali",
+    bullets: ["Bachelor of Computer Applications (BCA)"],
   },
 ];
