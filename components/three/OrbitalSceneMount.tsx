@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import { Component, useEffect, useState, type ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import { OrbitalSceneFallback } from "./OrbitalSceneFallback";
 
@@ -20,6 +20,23 @@ const OrbitalScene = dynamic(
     loading: () => <CenteredFallback className="h-full w-full" />,
   },
 );
+
+// If WebGL can't initialize (some mobile/low-power contexts), fall back to the
+// static SVG instead of rendering nothing.
+class SceneErrorBoundary extends Component<
+  { fallback: ReactNode; children: ReactNode },
+  { failed: boolean }
+> {
+  state = { failed: false };
+
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+
+  render() {
+    return this.state.failed ? this.props.fallback : this.props.children;
+  }
+}
 
 interface OrbitalSceneMountProps {
   className?: string;
@@ -44,7 +61,11 @@ export function OrbitalSceneMount({ className }: OrbitalSceneMountProps) {
     return <CenteredFallback className={className} />;
   }
 
-  return <OrbitalScene className={className} />;
+  return (
+    <SceneErrorBoundary fallback={<CenteredFallback className={className} />}>
+      <OrbitalScene className={className} />
+    </SceneErrorBoundary>
+  );
 }
 
 export default OrbitalSceneMount;

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import { MonoLabel } from "@/components/ui/MonoLabel";
 import { ContactForm } from "@/components/sections/ContactForm";
-import { Reveal } from "@/components/ui/Reveal";
 import { bio } from "@/content/bio";
 
 export const metadata: Metadata = {
@@ -54,7 +53,7 @@ const channels: Channel[] = [
 export default function ContactPage() {
   return (
     <section className="enter-fade-up pt-8 space-y-12">
-      <Reveal className="space-y-4">
+      <header className="space-y-4">
         <MonoLabel className="normal-case">&gt; contact.sh</MonoLabel>
         <h1 className="font-medium leading-[0.95] tracking-[-1px] text-[clamp(32px,5vw,48px)] text-ink">
           Contact<span className="text-accent">.</span>
@@ -73,7 +72,7 @@ export default function ContactPage() {
             <span className="text-ink-muted"> · {bio.location}</span>
           </span>
         </div>
-      </Reveal>
+      </header>
 
       <div className="space-y-4">
         <MonoLabel as="div" tone="muted">
