@@ -13,17 +13,17 @@ function Panel({ item, side }: { item: TimelineItem; side: "left" | "right" }) {
         side === "left" ? "text-right" : "text-left",
       )}
     >
-      <h3 className="text-[13px] font-medium leading-[1.3] text-ink md:text-[15px]">
+      <h3 className="text-[15px] font-medium leading-[1.3] text-ink md:text-[18px]">
         {item.org}
       </h3>
-      <p className="mt-1 font-mono text-[11px] tracking-[0.05em] text-ink-tertiary">
+      <p className="mt-1 font-mono text-[12px] tracking-[0.05em] text-ink-tertiary">
         {item.when}
       </p>
       <ul className="mt-2 space-y-1">
         {item.bullets.map((bullet) => (
           <li
             key={bullet}
-            className="text-[11px] leading-[1.6] text-ink-muted md:text-[12px]"
+            className="text-[13px] leading-[1.6] text-ink-muted md:text-[14px]"
           >
             {`· ${bullet}`}
           </li>
